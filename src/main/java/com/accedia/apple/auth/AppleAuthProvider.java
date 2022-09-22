@@ -16,6 +16,7 @@ import com.google.api.client.json.gson.GsonFactory;
 import com.google.common.base.Supplier;
 import com.google.common.base.Suppliers;
 import com.google.common.collect.ImmutableList;
+import lombok.Setter;
 
 import javax.annotation.Nullable;
 import java.io.IOException;
@@ -49,7 +50,7 @@ public class AppleAuthProvider {
     private final UserDataDeserializer userDataDeserializer;
     private final List<String> appleUserScopes;
     private final String redirectUrl;
-    private final HttpTransport httpTransport;
+    @Setter private HttpTransport httpTransport;
     private final JsonFactory jsonFactory;
     private final JWTVerifier jwtVerifier;
 
