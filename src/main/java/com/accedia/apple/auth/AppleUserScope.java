@@ -1,17 +1,13 @@
 package com.accedia.apple.auth;
 
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+
+@Getter
+@RequiredArgsConstructor
 public enum AppleUserScope {
     EMAIL("email"),
     NAME("name");
 
     private final String literal;
-
-    AppleUserScope(String literal)
-    {
-        this.literal = literal;
-    }
-
-    String getLiteral() {
-        return literal;
-    }
 }

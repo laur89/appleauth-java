@@ -64,12 +64,12 @@ public class AppleAuthProvider {
      * @param teamId          A 10-character key identifier obtained from your developer account.
      * @param secretGenerator A provider for the client secret as specified in apple auth id.
      * @param privateKey      The private key as supplied by Apple.
+     * @param scopes          The apple required scopes. Values given here will determine the content of the
+     *                        User Data returned in the tokens. Can be left null if url generation won't
+     *                        be used.
      * @param redirectUrl     URL to which the user will be redirected after successful verification.
      *                        You need to configure a verified domain and map the redirect URL to it.
      *                        Can’t be an IP address or localhost. Can be left null if url generation won't
-     *                        be used.
-     * @param scopes          The apple required scopes. Values given here will determine the content of the
-     *                        User Data returned in the tokens. Can be left null if url generation won't
      *                        be used.
      */
     public AppleAuthProvider(String clientId, String keyId, String teamId, SecretGenerator secretGenerator,

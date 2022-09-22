@@ -15,9 +15,12 @@ public class UserDataDeserializer {
         Map<String, Claim> claims = decodedJWT.getClaims();
         return new UserData(
                 Optional.ofNullable(claims.get(AppleUserDataClaim.EMAIL.getClaimKey()))
-                        .map(Claim::asString).orElse(null),
+                        .map(Claim::asString)
+                        .orElse(null),
                 Optional.ofNullable(claims.get(AppleUserDataClaim.EMAIL_VERIFIED.getClaimKey()))
-                        .map(Claim::asString).map(Boolean::parseBoolean).orElse(null),
+                        .map(Claim::asString)
+                        .map(Boolean::parseBoolean)
+                        .orElse(null),
                 decodedJWT.getSubject(),
                 Optional.ofNullable(claims.get(AppleUserDataClaim.AUTHENTICATION_TIME.getClaimKey()))
                 .map(Claim::asInt)
